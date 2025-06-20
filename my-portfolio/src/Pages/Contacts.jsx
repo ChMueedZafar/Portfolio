@@ -1,6 +1,30 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
 
 function Contact() {
+  const formRef = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'your_service_id',     // 👉 Replace with your actual Service ID
+      'your_template_id',    // 👉 Replace with your actual Template ID
+      formRef.current,
+      'your_public_key'      // 👉 Replace with your actual Public Key
+    ).then(
+      () => {
+        alert('Message sent successfully!');
+        formRef.current.reset();
+      },
+      (error) => {
+        alert('Failed to send message. Please try again.');
+        console.error(error);
+      }
+    );
+  };
+
   return (
     <section id="contact" className="px-6 py-16 bg-white min-h-screen">
       <div className="max-w-2xl mx-auto text-center">
@@ -15,6 +39,8 @@ function Contact() {
         </motion.h2>
 
         <motion.form
+          ref={formRef}
+          onSubmit={sendEmail}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -23,17 +49,35 @@ function Contact() {
         >
           <div>
             <label className="block mb-2 font-medium text-gray-700">Name</label>
-            <input type="text" placeholder="Your name" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input
+              type="text"
+              name="user_name"
+              required
+              placeholder="Your name"
+              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
 
           <div>
             <label className="block mb-2 font-medium text-gray-700">Email</label>
-            <input type="email" placeholder="Your email" className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input
+              type="email"
+              name="user_email"
+              required
+              placeholder="Your email"
+              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
 
           <div>
             <label className="block mb-2 font-medium text-gray-700">Message</label>
-            <textarea rows="5" placeholder="Your message..." className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <textarea
+              name="message"
+              rows="5"
+              required
+              placeholder="Your message..."
+              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
 
           <button
