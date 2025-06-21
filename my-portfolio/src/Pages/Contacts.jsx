@@ -9,10 +9,10 @@ function Contact() {
     e.preventDefault();
 
     emailjs.sendForm(
-      'your_service_id',     // 👉 Replace with your actual Service ID
-      'your_template_id',    // 👉 Replace with your actual Template ID
+      'service_vgcdsu3', 
+      'template_y14jm4k', 
       formRef.current,
-      'your_public_key'      // 👉 Replace with your actual Public Key
+      'YaPMIPghtn5j4BGJY' 
     ).then(
       () => {
         alert('Message sent successfully!');
