@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import heroImg from '../assets/hero.png';
-import Blob from '../components/Blob'; // 👈 Import the blob component
+import Blob from '../Components/Blob'; // 👈 Import the blob component
 
 function Home() {
   return (
