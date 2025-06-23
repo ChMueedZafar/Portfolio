@@ -3,7 +3,7 @@ import aboutImg from '../assets/aboutimg.png'; // 👈 Add your photo or a dev i
 
 function About() {
   return (
-    <section id="about" className="min-h-screen px-6 py-20 bg-white">
+    <section className="min-h-screen px-6 py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         
         {/* Image */}

@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-blue-700 text-white text-center py-6 mt-20">
+  <footer className="bg-blue-700 dark:bg-gray-800 text-white text-center py-6 mt-20">
       <p className="text-lg font-semibold">© {new Date().getFullYear()} Abdul Mueed</p>
       <div className="flex justify-center mt-4 gap-6">
         <a href="https://github.com/your-github" target="_blank" rel="noreferrer" className="hover:text-gray-300">

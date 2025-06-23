@@ -1,15 +1,17 @@
 import React from 'react';
+import DarkModeToggle from './DarkModeToggle';
 
 function Navbar() {
   return (
-    <nav className="bg-white shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-      <h1 className="text-xl font-bold text-blue-600">Mueed's Portfolio</h1>
-      <ul className="flex gap-6 text-gray-700 font-medium">
-        <li><a href="#home" className="hover:text-blue-500">Home</a></li>
-        <li><a href="#about" className="hover:text-blue-500">About</a></li>
-        <li><a href="#projects" className="hover:text-blue-500">Projects</a></li>
-        <li><a href="#contact" className="hover:text-blue-500">Contact</a></li>
-      </ul>
+    <nav className="fixed w-full top-0 z-50 bg-white/70 dark:bg-gray-900/80 backdrop-blur-md shadow-md px-6 py-4 flex justify-between items-center">
+      <div className="font-bold text-blue-700 dark:text-white text-xl">Mueed's Portfolio</div>
+      <div className="flex gap-6 items-center">
+        <a href="#home" className="text-gray-800 dark:text-white hover:text-blue-600">Home</a>
+        <a href="#about" className="text-gray-800 dark:text-white hover:text-blue-600">About</a>
+        <a href="#projects" className="text-gray-800 dark:text-white hover:text-blue-600">Projects</a>
+        <a href="#contact" className="text-gray-800 dark:text-white hover:text-blue-600">Contact</a>
+        <DarkModeToggle />
+      </div>
     </nav>
   );
 }

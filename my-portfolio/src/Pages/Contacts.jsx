@@ -26,7 +26,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="px-6 py-16 bg-white min-h-screen">
+    <section className="px-6 py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
       <div className="max-w-2xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

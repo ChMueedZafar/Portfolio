@@ -3,7 +3,7 @@ import heroImg from '../assets/hero.png'; // 👈 Add your image in /assets fold
 
 function Home() {
   return (
-    <section id="home" className="min-h-screen px-6 py-20 bg-gradient-to-br from-blue-50 to-white">
+  <section className="min-h-screen px-6 py-20 bg-blue-50 dark:bg-gray-900 text-gray-900 dark:text-white">
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
         
         <motion.div
