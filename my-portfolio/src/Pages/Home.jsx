@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion';
-import heroImg from '../assets/hero.png'; // 👈 Add your image in /assets folder
+import heroImg from '../assets/hero.png';
+import Blob from '../components/Blob'; // 👈 Import the blob component
 
 function Home() {
   return (
-  <section className="min-h-screen px-6 py-20 bg-blue-50 dark:bg-gray-900 text-gray-900 dark:text-white">
-      <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+    <section className="relative min-h-screen px-6 py-20 bg-blue-50 dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden">
+      
+      {/* 🫧 Floating Blobs */}
+      <Blob className="w-72 h-72 bg-purple-300 dark:bg-purple-600 top-0 -left-20 z-0" />
+      <Blob className="w-72 h-72 bg-pink-300 dark:bg-pink-600 bottom-0 -right-20 z-0" />
+
+      {/* ✅ Main Content */}
+      <div className="relative z-10 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
         
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -12,10 +19,10 @@ function Home() {
           transition={{ duration: 0.8 }}
           className="text-center md:text-left"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-blue-800 mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-blue-800 dark:text-white mb-4">
             Hi, I'm Abdul Mueed Zafar
           </h1>
-          <p className="text-lg text-gray-700 max-w-xl">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl">
             A full-stack developer passionate about crafting elegant, user-friendly web experiences.
             I specialize in React, Tailwind CSS, and modern JavaScript.
           </p>
