@@ -15,10 +15,10 @@ function ProjectCard({ title, description, image, liveLink, githubLink }) {
         <p className="text-gray-700">{description}</p>
         <div className="flex justify-between items-center text-sm pt-2">
           <a href={liveLink} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">
-            🔗 Live
+            🔗 Live.
           </a>
           <a href={githubLink} target="_blank" rel="noreferrer" className="text-gray-600 hover:underline">
-            💻 GitHub
+            💻 GitHub.
           </a>
         </div>
       </div>
