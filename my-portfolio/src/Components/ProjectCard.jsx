@@ -23,7 +23,9 @@ function ProjectCard({ title, description, image, liveLink, githubLink }) {
         </div>
       </div>
     </motion.div>
+
   );
+  
 }
 
 export default ProjectCard;
